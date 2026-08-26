@@ -1,14 +1,52 @@
-#3
-products = [
-{"name": "Keyboard", "price": 500000, "in_stock": True},
-{"name": "Mouse", "price": 200000, "in_stock": False},
-{"name": "Monitor", "price": 3500000, "in_stock": True},
-{"name": "Webcam", "price": 800000, "in_stock": True},
+import math
+
+
+class Shape:
+    def __init__(self, name):
+        self.name = name
+
+    def area(self):
+        return 0
+
+    def describe(self):
+        print(f"Shape: {self.name}  area: {self.area()}")
+
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        super().__init__("Rectangle")
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+
+class Circle(Shape):
+    def __init__(self, radius):
+        super().__init__("Circle")
+        self.radius = radius
+
+    def area(self):
+        return math.pi * self.radius ** 2
+
+
+class Square(Rectangle):
+    def __init__(self, side):
+        super().__init__(side, side)
+        self.name = "Square"
+
+
+shapes = [
+    Rectangle(4, 5),
+    Circle(3),
+    Square(6)
 ]
-from functools import reduce
-in_stock = list(filter(lambda i:i["in_stock"] == True,products))
-b = list(map(lambda i:(i["name"],i["price"]*0.9),in_stock))
-c = reduce(lambda x,y:x+y[1],b,0)
-for name,price in b:
-    print(f"{name}: {price:.2f}")
-print(f"sum price: {c:.2f}")
+
+for shape in shapes:
+    shape.describe()
+
+sq = Square(6)
+
+print(isinstance(sq, Shape))
+print(issubclass(Square, Shape))    
