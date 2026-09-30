@@ -1,0 +1,5 @@
+google.com -> 216.239.38.120
+github.com -> 140.82.121.3
+wikipedia.org -> 185.15.59.224
+digikala.com -> 185.188.104.10
+aparat.com -> 185.147.179.11

@@ -1,0 +1,3 @@
+Hostname: Mmd-Hp
+Local IP: 10.45.201.140 2a01:5ec0:2001:632e:2d37:bc46:98bf:714 2a01:5ec0:2001:632e:8db3:1eff:ba86:5984 
+Public IP: 5.116.47.39
