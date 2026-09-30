@@ -1,0 +1,10 @@
+User: mmd
+Date: Wed Sep 30 10:56:15 PM +0330 2026
+Local IP: 10.45.201.140 2a01:5ec0:2001:632e:6a4:1929:6a16:e3e0 2a01:5ec0:2001:632e:8db3:1eff:ba86:5984 
+PING google.com (2001:4860:4802:32::78) 56 data bytes
+64 bytes from any-in-2001-4860-4802-32--78.1e100.net (2001:4860:4802:32::78): icmp_seq=1 ttl=246 time=216 ms
+64 bytes from any-in-2001-4860-4802-32--78.1e100.net (2001:4860:4802:32::78): icmp_seq=2 ttl=246 time=137 ms
+
+--- google.com ping statistics ---
+2 packets transmitted, 2 received, 0% packet loss, time 1000ms
+rtt min/avg/max/mdev = 137.154/176.742/216.330/39.588 ms
