@@ -1,0 +1,13 @@
+{
+    "dbExplorer.profiles": [
+        {
+            "id": "postgresql",
+            "label": "PostgreSQL",
+            "engine": "postgres",
+            "host": "localhost",
+            "port": 5432,
+            "database": "company",
+            "user": "postgres"
+        }
+    ]
+}

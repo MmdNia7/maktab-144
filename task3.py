@@ -1,8 +1,10 @@
 import logging
 
 logging.basicConfig(
+
     level=logging.INFO,
-    # format="%(levelname)s: %(message)s"
+    format="%(levelname)s: %(message)s"
+    
 )
 
 
@@ -21,7 +23,7 @@ class EvenNumbers:
             raise StopIteration
         number = self.start
         self.start += 2
-        logging.info("Generated number")
+        # logging.info("Generated number")
         return number
 
 

@@ -6,70 +6,70 @@ logging.basicConfig(
     format="%(levelname)s: %(message)s"
 )
 
+# try:
+#     responce1 = requests.get("https://dummyjson.com/users")
 
-try:
-    response = requests.get("https://dummyjson.com/products")
-    response.raise_for_status()
+#     responce1.raise_for_status()
 
-    products = response.json()
+#     users = responce1.json()
 
-    for product in products["products"]:
-        print(product["title"], product["price"], product["category"])
+#     for user in users["users"]:
+#         print(user["firstName"],user["lastName"],user["age"],user["email"])
 
-    logging.info("Products received successfully")
-
-except requests.exceptions.RequestException as e:
-    logging.error(e)
-# except Exception as e:
+#     logging.info("Users received successfully")
+    
+# except requests.exceptions.RequestException as e:
 #     logging.error(e)
 
-print("*"*30)
-print("*"*30)
-print("*"*30)
+
+# try:
+#     responce2 = requests.get("https://dummyjson.com/users/5")
+
+#     responce2.raise_for_status()
+
+#     user = responce2.json()
+
+#     print(user["firstName"] , user["lastName"], user["age"], user["email"])
+
+#     logging.info("Users received successfully")
+
+# except requests.exceptions.RequestException as e:
+#     logging.error(e)
 
 
 try:
-    response2 = requests.get("https://dummyjson.com/products/1")
-    response2.raise_for_status()
+    first_name = input("Enter First Name: ")
+    last_name = input("Enter Last Name: ")
+    age = int(input("Enter Age: "))
+    email = input("Enter Email: ")
+    username = input("Enter Username: ")
 
-    products2 = response2.json()
-    
-    print(products2["title"], products2["price"], products2["category"])
+    new_user = {
+        "firstName": first_name,
+        "lastName": last_name,
+        "age": age,
+        "email": email,
+        "username": username
+    }
 
-    logging.info("Product received successfully")
-
-except requests.exceptions.RequestException as e:
-    logging.error(e)
-
-
-print("*"*30)
-print("*"*30)
-print("*"*30)
-
-
-new_dict = {
-    "title": input("Input title: "),
-    "description": input("Input description: "),
-    "price": float(input("Input price: ")),
-    "category": input("Input category: ")
-}
-
-try:
-    response_3 = requests.post(
-        "https://dummyjson.com/products/add",
-        json=new_dict
+    response3 = requests.post(
+        "https://dummyjson.com/users/add",
+        json=new_user
     )
 
-    response_3.raise_for_status()
+    response3.raise_for_status()
 
-    product = response_3.json()
+    result = response3.json()
+    print(result)
 
-    logging.info("Product added successfully")
+    print("ID:", result["id"])
+    print("First Name:", result["firstName"])
+    print("Last Name:", result["lastName"])
+    print("Age: ", result["age"])
+    print("Email:", result["email"])
+    print("Username:", result["username"])
 
-    print("Product ID:", product["id"])
-    print("Title:", product["title"])
-    print("Price:", product["price"])
-    print("Category:", product["category"])
+    logging.info("User added successfully")
 
-except requests.exceptions.RequestException as e:
+except (requests.exceptions.RequestException, ValueError) as e:
     logging.error(e)
